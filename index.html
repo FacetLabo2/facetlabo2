@@ -1,1 +1,422 @@
-Hello world
+<!DOCTYPE html>
+<html data-lt-installed="true">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+        <meta charset="utf8">
+        <title>Facet Virtual(Fake)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="res/bootstrap-theme.css">
+        <link rel="stylesheet" href="res/bootstrap.css">
+        <link rel="stylesheet" href="res/style.css">
+        <link rel="stylesheet" href="res/font-awesome.css">
+        <link
+        href="res/css.css" rel="stylesheet">
+        <style type="text/css">
+            * {
+                <br> -webkit-user-select: text !important;
+                <br> -moz-user-select: text !important;
+                <br> -ms-user-select: text !important;
+                <br> user-select: text !important;<br>
+            }
+        </style>
+    </head>
+    <body>
+        <div class="modal fade registerModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" id="modalContentRegister">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <h4 class="modal-title text-center tituloFormulario">Crea tu cuenta de usuario de FacetVirtual</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <form id="" class="registerForm" action="registro.php" method="post">
+                                        <label class="sr-only" for="nombre">Nombre</label>
+                                        <input id="nombre" type="text" name="nombre" placeholder="Nombre" class="form-control" maxlength="100" required="">
+                                        <label class="sr-only" for="apellido">Apellido</label>
+                                        <input id="apellido" type="text" name="apellido" placeholder="Apellido" class="form-control" maxlength="100" required="">
+                                        <label class="sr-only" for="mail">Email</label>
+                                        <input id="mail" type="email" name="mail" placeholder="Correo Electrónico" class="form-control" required="">
+                                        <label class="sr-only" for="documento">Número de Documento</label>
+                                        <input id="documento" type="number" name="documento" placeholder="Número de Documento" class="form-control" min="5000000" max="99999999" required="">
+                                        <p>Al crear una cuenta usted acepta nuestros
+                                            <a href="#">Términos y Condiciones</a>.</p>
+                                        <!-- <div class="g-recaptcha" data-sitekey="6LerLpUUAAAAABh04LJqlecVSJNpiQTvgoVOFR8z"></div> -->
+                                        <input type="submit" name="registrar" value="Registrarse" class="btn" id="botonRegistrar">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade contactModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" id="modalContentContact">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <h4 class="modal-title text-center tituloFormulario">Informanos sobre tus problemas para ingresar</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <form class="registerForm" action="fproblemas.php" method="post">
+                                        <label class="sr-only" for="nombre">Nombre</label>
+                                        <input id="nombre" type="text" name="nombre" placeholder="Nombre" class="form-control" maxlength="100" required="">
+                                        <label class="sr-only" for="apellido">Apellido</label>
+                                        <input id="apellido" type="text" name="apellido" placeholder="Apellido" class="form-control" maxlength="100" required="">
+                                        <label class="sr-only" for="mail">Email</label>
+                                        <input id="mail" type="email" name="mail" placeholder="Correo Electrónico" class="form-control" required="">
+                                        <label class="sr-only" for="documento">Número de Documento</label>
+                                        <input id="documento" type="number" name="documento" placeholder="Número de Documento" class="form-control" min="5000000" max="99999999" required="">
+                                        <label for="comentarios" class="sr-only">Comentarios</label>
+                                        <textarea name="comentarios" id="comentarios" rows="4" class="form-control" placeholder="Comentarios" required=""></textarea>
+                                        <input type="submit" name="contactar" value="Contactar" class="btn" id="botonContactar">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row header">
+                <div class="darken hidden-sm hidden-xs" id="headerTop"></div>
+                <div class="headerLine">
+                    <img id="mainLogo" class="" src="res/facetvirtual-logo-2017.png" alt="logo_facet_virtual" max-height="80px" max-width="177px">
+                </div>
+                <div class="headerFoot darken col-md-12">
+                    <h3 id="facetTitulo" class="col-md-10 col-xs-8">Facultad de Ciencias Exactas y Tecnología</h3>
+                    <div id="headerRedes" class="col-md-2 col-xs-4 pull-right">
+                        <a id="facebook" href="https://www.facebook.com/CediteFacetvirtual/" target="_blank" class="fa"></a>
+                        <a id="twitter" href="https://twitter.com/ceditefacet" target="_blank" class="fa"></a>
+                        <a id="youtube" href="https://www.youtube.com/user/ceditecapacitacion" target="_blank" class="fa"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row lineaDivisoria"></div>
+
+            <div class="row loginEInfo">
+                <div class="login col-md-4">
+                    <a href="https://facetvirtual.facet.unt.edu.ar/login/index.php" id="botonLogueo" class="btn btn-lg botonesIzquierdos">
+                        <i class="fa pull-left"></i>Loguearse</a>
+                    <button type="button" id="botonRegistro" class="btn btn-lg botonesIzquierdos" data-toggle="modal" data-target=".registerModal">
+                        <i class="fa pull-left"></i>Registrarse</button>
+                    <button type="button" id="botonProblemas" class="btn btn-lg botonesIzquierdos" data-toggle="modal" data-target=".contactModal">
+                        <i class="fa pull-left"></i>¿Problemas para ingresar?</button>
+                </div>
+
+                <div class="links col-md-8">
+                    <div class="panel-group" id="accordionLinks" role="tablist" aria-multiselectable="false">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingIngreso">
+                                <h4 class="tituloBotones">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordionLinks" href="#linksIngreso" aria-expanded="false" aria-controls="linksIngreso">
+                                        Ingreso Facet<span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="linksIngreso" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingIngreso">
+                                <div class="panel-body">
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=68">Curso AUTOGESTIONADO de Nivelación</a><br>
+
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=307">Prueba de Suficiencia</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=306">Curso de Ambientación y Articulación</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingCarreras">
+                                <h4 class="tituloBotones">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionLinks" href="#linksCarreras" aria-expanded="false" aria-controls="linksCarreras">
+                                        Carreras<span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="linksCarreras" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCarreras">
+                                <div class="panel-body">
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=53777">INSCRIPCIONES A CURSADAS MÓDULO I O MÓDULO II</a>
+                                    <br>
+                                    <hr>
+                                    DE PREGRADO O CORTAS
+                                    <br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=18">Programador Universitario</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=19">Técnico Universitario en Tecnología Azucarera e Industrias Derivadas</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=3">Bachiller Universitario en Física</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=47976">Tecnicatura Universitaria en Física</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=23420">Tecnicatura Universitaria en Física Ambiental
+                                    </a><br>
+                                    <!--</br> Tecnicatura en Iluminación-->
+                                    <hr>
+                                    DE GRADO
+                                    <br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=2">Agrimensura</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=4">Diseñador en Iluminación</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=5">Ingeniería Azucarera</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=6">Ingeniería Biomédica</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=7">Ingeniería Civil</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=8">Ingeniería Eléctrica</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=9">Ingeniería Electrónica</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=10">Ingeniería en Computación</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=32590">Ingeniería en Informática</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=11">Ingeniería Geodésica y Geofísica</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=12">Ingeniería Industrial</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=13">Ingeniería Mecánica</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=14">Ingeniería Química</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=15">Licenciatura en Física</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=16">Licenciatura en Informática</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=17">Licenciatura en Matemática</a><br>
+                                    <hr>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=102">Re-dictado Álgebra y Geometría Analítica</a><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingInvestigacion">
+                                <h4 class="tituloBotones">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionLinks" href="#linksInvestigacion" aria-expanded="false" aria-controls="linksInvestigacion">
+                                        POSGRADO<span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="linksInvestigacion" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInvestigacion">
+                                <div class="panel-body">
+                                    <!--<a href="http://www.facetvirtual.unt.edu.ar/mod/url/view.php?id=5779">Curso "Herramientas para la Gestión de Aulas Virtuales"</a><br>-->
+                                    <!--<a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=141">Diplomatura en Logística</a><br>-->
+                                    <!--<a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=11221">Diplomatura en Procesos de Comunicación Mediados por Tecnología</a><br>--><a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=67"> Física de la Ionósfera</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=196">Física del Plasma y Electrodinámica de la Ionósfera</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=7525">Especialización en Gestión Industrial</a><br>
+                                    <!--<a href="http://www.facetvirtual.unt.edu.ar/mod/url/view.php?id=7026">Laboratorio de Transductores y Física Nuclear</a><br>-->
+                                    <!--<a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=212">Modernas Tecnologías de Sistemas de Comunicaciones Móviles</a><br>-->
+                                    <hr><a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=47850"> MAVILE</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=43191">Maestría en Electrónica</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=35130">Doctorado en Ciencias y Tecnologías de la Luz</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=35868">Doctorado en Ciencias Exactas e Ingeniería</a><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingGrupos">
+                                <h4 class="tituloBotones">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionLinks" href="#linksGrupos" aria-expanded="false" aria-controls="linksGrupos">
+                                        INVESTIGACIÓN
+                                        <span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="linksGrupos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingGrupos">
+                                <div class="panel-body">
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=184">Instituto de Física del Noroeste - INFINOA</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=204">Laboratorio de Física del Sólido</a><br>
+                                <!--<a href="http://www.facetvirtual.unt.edu.ar/mod/url/view.php?id=2362">Laboratorio de Telecomunicaciones</a><br>-->
+                                    <!--<a href="http://www.facetvirtual.unt.edu.ar/mod/url/view.php?id=4144">Nano Project</a><br>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingCursos">
+                                <h4 class="tituloBotones">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionLinks" href="#linksCursos" aria-expanded="false" aria-controls="linksCursos">
+                                        CAPACITACIÓN<span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="linksCursos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCursos">
+                                <div class="panel-body">
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=53774">ÁREA DE FORMACIÓN DOCENTE</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=149">Campo geomagnético, Indices magnéticos y su aplicación en el Clima Espacial</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=102">CAPACITACION SCANIA</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=218">Cursos, Talleres, Seminarios de Extensión en Ing. Computación</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/mod/page/view.php?id=7553">Diplomatura Universitaria en Tecnologías y Procesos de Producción Mecánica</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=294">Diseño Eficiente con Autodesk Inventor Professional</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=70">Diseño Lógico en FPGA de Controladores de Sistemas de Conversión de Energía AC-DC</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=286">Ingetrónica: Cursos y seminarios de capacitación de Ingeniería Electrónica</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=199">Introducción a las Redes Informáticas</a><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingCapacitaciones">
+                                <h4 class="tituloBotones">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionLinks" href="#linksCapacitaciones" aria-expanded="false" aria-controls="linksCapacitaciones">
+                                        GRUPOS<span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="linksCapacitaciones" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCapacitaciones">
+                                <div
+                                    class="panel-body">
+                                    <!--<a href="http://www.facetvirtual.unt.edu.ar/mod/url/view.php?id=3417">Comisión Carrera DI3</a><br>-->
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=15">PRICALAB</a><br>
+                                    <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=8">Seminario de Tesis de Licenciatura en Informática</a><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- AQUI COMIENZAN BANNERS-->
+            <div id="slideshowMovil" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#slideshowMovil" data-slide-to="0" class=""></li>
+                    <li data-target="#slideshowMovil" data-slide-to="1" class=""></li>
+                    <li data-target="#slideshowMovil" data-slide-to="2" class=""></li>
+                    <li data-target="#slideshowMovil" data-slide-to="3" class="active"></li>
+                    <li data-target="#slideshowMovil" data-slide-to="4" class=""></li>
+                    <!--DESDE AQUÍ PODEMOS AGREGAR MAS BOTONES DEL SLIDE y luego agregar la etiqueta div carousel (ver abajo la oculta) -->
+                    <!--  <li data-target="#slideshowMovil" data-slide-to="2"></li> -->
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+                    <div class="item">
+                        <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=534" target="_blank">
+                            <picture>
+                                <source media="(min-width: 800px)" srcset="res/moduloiiweb.jpg 1x">
+                                <source media="(min-width: 480px)" srcset="res/moduloiiweb.jpg 1x">
+                                <img src="res/moduloiiweb.jpg" alt="Modulo II" title="" style="">
+                            </picture>
+                            <div class="carousel-caption"></div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=309" target="_blank">
+                            <picture>
+                                <source media="(min-width: 800px)" srcset="res/tutorialesweb.jpg 1x">
+                                <source media="(min-width: 480px)" srcset="res/tutorialestablet.jpg 1x">
+                                <img src="res/tutorialesmovil.jpg" alt="Tutoriales FacetVirtual" title="" style="">
+                            </picture>
+                            <div class="carousel-caption"></div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=301" target="_blank">
+                            <picture>
+                                <source media="(min-width: 800px)" srcset="res/logoingreso2019.png 1x">
+                                <img src="res/logoingreso2019.png" alt="INGRESO FACET">
+                            </picture>
+                            <div class="carousel-caption"></div>
+                        </a>
+                    </div>
+                    <div class="item active">
+                        <a href="https://goo.gl/forms/a0BuDwTJffUXKhtl2" target="_blank">
+                            <picture>
+                                <source media="(min-width: 800px)" srcset="res/catedra-web.jpg 1x">
+                                <source media="(min-width: 480px)" srcset="res/catedra-tablet.jpg 1x">
+                                <img src="res/catedra-mobil.jpg" alt="Catedras en la Web">
+                            </picture>
+                            <div class="carousel-caption"></div>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="https://facetvirtual.facet.unt.edu.ar/course/view.php?id=306" target="_blank">
+                            <picture>
+                                <source media="(min-width: 800px)" srcset="res/caa-web.jpg 1x">
+                                <source media="(min-width: 480px)" srcset="res/caa-mobil.jpg 1x">
+                                <img src="res/caa-web.jpg" alt="Curso de Ambientación y Articulación" title="" style="">
+                            </picture>
+                            <div class="carousel-caption"></div>
+                        </a>
+                    </div>
+                    <!-- DESDE AQUÍ SE AGREGA LAS IMAGENES CON INFO Y/O LINKS DEL BOTON AGREGADO ARRIBA -->
+
+                    <!-- sacamos banner de geogebra       <div class="item">
+                    			<a href="https://forms.gle/aP7ZKMGGT9nXc2xK9" target="_blank">
+                     				<picture>
+                      				<source media="(min-width: 800px)" srcset="images/geogebra.jpeg">
+                      				<img src="images/geogebra.jpeg" alt="Taller Geogebra">
+                    				</picture>
+                              	<div class="carousel-caption">	</div></a>
+                              	<div class="carousel-caption">	</div></a>
+                           </div> -->
+
+                </div>
+                <a class="left carousel-control" href="#slideshowMovil" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#slideshowMovil" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="row lineaDivisoria"></div>
+            <footer class="row">
+                <div class="imagenesFinal col-sm-3">
+                    <img src="res/cedite-560-450.png" alt="cedite-logo" height="150px">
+                </div>
+                <p id="letraChica" class="text-left col-sm-9">
+                    <b>Centro de Educación a Distancia e Investigación en Tecnologías Educativas</b><br>
+                    Avenida Independencia 1800<br>
+                    CP:4000 S. M. Tucuman, Tucuman<br>
+                    Argentina<br>
+                    <a href="mailto:cedite@herrera.unt.edu.ar?subject=Contacto">cedite@herrera.unt.edu.ar</a>
+                </p>
+            </footer>
+        </div>
+        <!-- scripts necesarios para el uso de bootstrap y otros -->
+        <script src="res/jquery-3.js" charset="utf-8"></script>
+        <script src="res/bootstrap.js" charset="utf-8"></script>
+
+
+    </body>
+    <style id="stylus-30" type="text/css" class="stylus">
+        html {
+            scrollbar-color: #151515 #555;
+            scrollbar-width: thin !important;
+        }
+    </style>
+    <style id="stylus-51" type="text/css" class="stylus">
+        #page-my-index {
+            background-color: #484848;
+        }
+        body {
+            color: #aaa;
+            background-color: #393939;
+        }
+        .card {
+            border: 1px solid rgba(0, 0, 0, .125);
+            background-color: #393939;
+        }
+        .navbar-bootswatch {
+            background-color: #303030;
+        }
+        .dropdown-menu {
+            background-color: #303030;
+        }
+        .dropdown-divider {
+            border-top: 1px solid #292929;
+        }
+        #region-main {
+            border: 1px solid rgba(0, 0, 0, .125);
+            background-color: #393939;
+        }
+        span {
+            color: #aaa !important;
+        }
+        .que .info {
+            background-color: #212121;
+            border: 1px solid #000;
+        }
+
+        .formulation.clearfix {
+            background-color: #212121;
+            color: #aaa;
+        }
+        #quiz-timer {
+            background-color: #212121 !important;
+        }
+    </style>
+</html>
